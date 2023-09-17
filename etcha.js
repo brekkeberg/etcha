@@ -10,12 +10,6 @@ const allGridButtons = document.querySelectorAll('.gridButton');
 for (let i = 0; i <= allColorButtons.length - 1; i++){
     allColorButtons[i].addEventListener('click', setColorChoice);
 }
-
-// creates event listener for all grid choice buttons
-for (let i = 0; i <= allGridButtons.length - 1; i++){
-    allGridButtons[i].addEventListener('click', setGridSize);
-}
-
 // logic for color choice buttons
 let userColorChoiceHex = "black";
 function setColorChoice(){
@@ -33,50 +27,66 @@ function setColorChoice(){
     }
 }
 
+// creates event listener for all grid choice buttons
+for (let i = 0; i <= allGridButtons.length - 1; i++){
+    allGridButtons[i].addEventListener('click', makeEtchaGrid);
+}
 
-let gridSize = 70;
-function setGridSize(){
-    let userGridChoice = this.id;
-    if(userGridChoice === "gridSmall"){
-        gridSize = 15;
-        console.log(gridSize);
-    } else if (userGridChoice === "gridMedium"){
-        gridSize = 30;
-        console.log(gridSize);
-    } else if (userGridChoice === "gridLarge"){
-        gridSize = 70;
-        console.log(gridSize);
+
+function makeEtchaGrid(){
+    //gets name of user grid choice size name from button click
+    let userGridChoiceName = this.id;
+    //converts grid choice size name to grid choice size number
+    function setGridSize(){
+        if(userGridChoiceName === "gridSmall"){
+            return 15;
+        } else if (userGridChoiceName === "gridMedium"){
+            return 30;
+        } else if (userGridChoiceName === "gridLarge"){
+            return 70;
+        }
+    }
+    let userGridChoiceNum = setGridSize()
+
+    //delets any previous grids that have been built
+    const allGridCols = document.querySelectorAll('.etchaCol');
+    for (let i = allGridCols.length - 1; i >= 0; i--){
+        for (let y = 0; y <= allGridCols.length -1; y++){
+            allGridCols[y].removeChild(allGridCols[y].lastChild);
+        mainContainer.removeChild(mainContainer.lastChild);
+        }
+    }
+
+    // constructs columns based on user grid choice size number
+    for (let i = 1; i <= userGridChoiceNum; i++){
+        let etchaCol = document.createElement('div');
+        etchaCol.classList.add('etchaCol');
+        mainContainer.appendChild(etchaCol);
+        //constructs boxes within each column
+        for (let y = 1; y <= userGridChoiceNum; y++){
+            let etchaBox = document.createElement('div');
+            etchaBox.classList.add('etchaBox');
+            etchaCol.appendChild(etchaBox);
+            //adds event listener to each constructed box
+            etchaBox.addEventListener('mouseover', applyColor);
+            function applyColor(){
+                etchaBox.style.cssText = "background-color: "+ userColorChoiceHex;
+            }
+        }
     }
 }
 
 
+//allEtchaCol[i].removeChild(allEtchaCol[i].lastChild);
 
 
 
 
-// constructs grid
-for (let i = 1; i <= gridSize; i++){
-    let etchaCol = document.createElement('div');
-    etchaCol.classList.add('etchaCol');
-    mainContainer.appendChild(etchaCol);
-    for (let y = 1; y <= gridSize; y++){
-        let etchaBox = document.createElement('div');
-        etchaBox.classList.add('box');
-        etchaCol.appendChild(etchaBox);
-    }
-}
 
-// makes object containing all boxes
-const allBoxes = document.querySelectorAll('.box');
 
-//makes mouseover event listener for all boxes
-let boxesCount = gridSize * gridSize
-for (let i = 0; i <= boxesCount -1; i++){
-    allBoxes[i].addEventListener('mouseover',applyColor);
-    function applyColor(){
-        allBoxes[i].style.cssText = "background-color: "+ userColorChoiceHex
-    }
-}
+
+
+
 
 
 
