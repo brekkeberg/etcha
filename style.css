@@ -9,12 +9,15 @@ h1{
     padding-top: 3vmin;
     border: 0%;
     font-size: 4vmin;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px darkgray;
 }
 p{
     margin: 0%;
     padding: 0%;
     border: 0%; 
     font-size: max(3vmin,10px);
+    text-shadow: 1px 1px 5px darkgray;
     
 }
 
@@ -60,6 +63,10 @@ body{
     justify-content: center;
 }
 
+.main{
+    border: 3px solid white;
+    border
+}
 .main div{
     flex: 1;
     background-color: white;
@@ -86,7 +93,7 @@ body{
     flex-direction: row;
 }
 .buttonContainer button{
-    font-size: 2.5vmin;
+    font-size: 2vmin;
     flex: 1;
     color: black;
     padding: .7vmin;
