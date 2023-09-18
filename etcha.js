@@ -23,7 +23,7 @@ function setColorChoice(){
     } else if (userColorChoiceName === "colorBlack"){
         userColorChoiceHex = 'black';
     } else if (userColorChoiceName === "colorRandom"){
-        userColorChoiceHex = 'green';
+        userColorChoiceHex = 'RGB('+getRandColor()+',100,100)';
     }
 }
 
@@ -76,6 +76,10 @@ function makeEtchaGrid(){
     }
 }
 
+function getRandColor(){
+    let randomRGBvalue = Math.random()*255
+    return randomRGBvalue
+}
 
 //allEtchaCol[i].removeChild(allEtchaCol[i].lastChild);
 
