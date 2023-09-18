@@ -6,7 +6,6 @@
 
 h1{
     margin: 0%;
-    padding-top: 3vmin;
     border: 0%;
     font-size: 4vmin;
     font-weight: bold;
@@ -16,13 +15,13 @@ p{
     margin: 0%;
     padding: 0%;
     border: 0%; 
-    font-size: max(3vmin,10px);
+    font-size: 2.5vmin;
+    color: black;
     text-shadow: 1px 1px 2px darkgray;
-    
 }
 
 body{
-    background-color: lightblue;
+    background-color: #d48679;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,9 +33,8 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 2px solid white;
     border-radius: 20px;
-    background-image: linear-gradient(180deg, #355C7D, rgb(67, 57, 87));
+    background-image: linear-gradient(180deg, #80979f, #c1d9dd);
     box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px,
                 rgba(0, 0, 0, 0.09) 0px 4px 2px,
                 rgba(0, 0, 0, 0.09) 0px 8px 4px,
@@ -55,6 +53,10 @@ body{
 .etchaOutside .header{
     border: 0px;
     flex: 0 0 13%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .etchaOutside .controls{
