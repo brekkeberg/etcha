@@ -1,7 +1,7 @@
 *{
     background-color: none;
     font-family: "Quicksand", sans-serif;
-    color: black;
+    color: rgb(55, 55, 55);
     
 }
 
@@ -10,6 +10,8 @@ h1{
     border: 0%;
     font-size: 7vmin;
     font-weight: 700;
+    color: white;
+    text-shadow: 1px 1px gray ;
 }
 p{
     margin: 0%;
@@ -20,7 +22,8 @@ p{
 }
 
 body{
-    
+    background: rgb(238,174,202);
+    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,6 +46,8 @@ body{
     width: 75%;
     display: flex;
     flex-direction: row;
+    border: 0px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .etchaOutside .header{
     border: 0px;
@@ -75,7 +80,7 @@ body{
 .main div{
     flex: 1;
     background-color: white;
-    border: 0px solid lightgray;
+    border: 0px solid rgb(240, 240, 240);
     padding: 0px;
     display: flex;
     flex-direction: column;
@@ -105,6 +110,7 @@ body{
     margin: .5vmin;
     border: 0px;
     border-radius: 1vmin;
+    background-color: white;
 }
 
 #colorRandom:hover{
