@@ -7,13 +7,13 @@ let color = DEFAULTCOLOR;
 let userGridSizeInput = "";
 let userColorInput = "";
 
-//creates object that will contain grid
+// identifies space that will contain grid
 const gridContainer = document.querySelector('#main');
 
-//builds initial default grid before any size button pushed
+// builds initial default grid before any size button pushed
 buildGrid.call()
 
-// creates object containing all grid buttons and color buttons
+// identifies space containing all grid buttons and color buttons
 const allColorButtons = document.querySelectorAll('.colorButton');
 const allGridButtons = document.querySelectorAll('.gridButton');
 // creates event listener for all grid choice buttons
